@@ -1,0 +1,15 @@
+{
+  "name": "wl-micro-frontends(wl-qiankun)",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "cinit": "node config/install.js",
+    "serve": "node config/start.js",
+    "build": "node config/build.js",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "element-ui": "^2.13.2",
+    "qiankun": "^2.0.15"
+  }
+}
