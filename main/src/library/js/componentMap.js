@@ -1,5 +1,5 @@
 const componentsMap = {
-  'wl-container': () => import(`../ui/wl-container`)
+  'test-container': () => import(`../ui/test-container`)
 }
 
 export {

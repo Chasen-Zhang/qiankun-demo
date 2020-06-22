@@ -1,5 +1,5 @@
 
-import WlContainer from './wl-container';
+import WlContainer from './test-container';
 
 const components = [WlContainer];
 

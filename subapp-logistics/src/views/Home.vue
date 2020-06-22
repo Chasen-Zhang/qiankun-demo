@@ -9,7 +9,7 @@
 <script>
 import Vue from "vue";
 import Button from "element-ui";
-const com = window.getDynamicComponet("wl-container");
+const com = window.getDynamicComponet("test-container");
 Vue.use(Button);
 export default {
   name: "Home",

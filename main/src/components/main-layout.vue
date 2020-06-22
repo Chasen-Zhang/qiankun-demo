@@ -8,10 +8,17 @@
         <s2b-nav></s2b-nav>
       </el-col>
       <el-col :span="20">
-        <div id="sub-app-layout" class="app-view-box" v-html="content" />
+        <template v-if="!isChildApp || isCommon">
+          <router-view />
+        </template>
+        <div
+          v-show="isChildApp && !isCommon"
+          id="sub-app-layout"
+          class="app-view-box"
+          v-html="content"
+        />
       </el-col>
     </el-row>
-    <div v-if="loading" class="subapp-loading" />
   </div>
 </template>
 
@@ -20,6 +27,7 @@ import Vue from "vue";
 import nav from "./nav";
 import navHeader from "./header";
 import { Col, Row } from "element-ui";
+
 Vue.use(Col);
 Vue.use(Row);
 export default {
@@ -28,16 +36,29 @@ export default {
     "s2b-header": navHeader
   },
   props: {
-    loading: {
-      type: Boolean,
-      default: false
-    },
     content: {
       type: String,
       default: ""
+    },
+    isChildApp: {
+      type: Boolean,
+      default: false
     }
   },
-  methods: {}
+  data() {
+    return {
+      isCommon: false // 是否是公共页面
+    };
+  },
+  created() {
+    console.log(this.$route.meta);
+  },
+  methods: {},
+  watch: {
+    $route(val) {
+      this.isCommon = val.meta.isCommon;
+    }
+  }
 };
 </script>
 

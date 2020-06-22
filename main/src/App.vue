@@ -3,7 +3,7 @@
     <template v-if="!isChildApp">
       <router-view></router-view>
     </template>
-    <MainLayout v-show="isChildApp" :loading="loading" :content="content"></MainLayout>
+    <MainLayout v-show="isChildApp" :isChildApp="isChildApp" :content="content"></MainLayout>
   </div>
 </template>
 <script>
@@ -24,7 +24,9 @@ export default {
   },
   computed: {
     isChildApp() {
-      if (this.$route.path.match("subapp")) {
+      let { path } = this.$route;
+      console.log(path);
+      if (path.match("subapp-") || path.match("common-")) {
         return true;
       } else {
         return false;

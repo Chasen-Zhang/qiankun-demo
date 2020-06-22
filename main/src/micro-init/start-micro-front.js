@@ -72,7 +72,7 @@ export default function register() {
   });
   // 设置默认子应用
   if (!defaultApp) defaultApp = entries[0].routerBase;
-  //setDefaultMountApp(defaultApp);
+  setDefaultMountApp(defaultApp);
   // 第一个子应用加载完毕回调
   runAfterFirstMounted((app) => {
     console.log(app);

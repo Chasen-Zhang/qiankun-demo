@@ -10,7 +10,6 @@ Vue.use(VueRouter);
 Vue.config.productionTip = false;
 let instance = null;
 let router = null;
-window.getDynamicComponet = null;
 const __qiankun__ = window.__POWERED_BY_QIANKUN__;
 export async function bootstrap({ components, utils, pager, appBus }) {
   // 注册主应用下发的组件
@@ -27,7 +26,7 @@ export async function bootstrap({ components, utils, pager, appBus }) {
 }
 export async function mount({ data = {} } = {}) {
   router = new VueRouter({
-    base: window.__POWERED_BY_QIANKUN__ ? '/subapp-logistics' : '/',
+    base: __qiankun__ ? '/subapp-logistics' : '/',
     mode: 'history',
     routes
   });

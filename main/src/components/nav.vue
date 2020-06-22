@@ -25,6 +25,9 @@
     <el-menu-item index="/subapp-logistics/about">物流菜单二</el-menu-item>
     <el-menu-item index="/subapp-marketing">营销菜单一</el-menu-item>
     <el-menu-item index="/subapp-marketing/about">营销菜单二</el-menu-item>
+    <el-menu-item index="/about">父应用 about</el-menu-item>
+    <el-menu-item index="/home">父应用 home</el-menu-item>
+    <el-menu-item index="/common-finance">属于父应用但是是公共页面</el-menu-item>
   </el-menu>
 </template>
 

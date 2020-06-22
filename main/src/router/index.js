@@ -8,35 +8,22 @@ VueRouter.prototype.push = function push(location) {
 Vue.use(VueRouter);
 const routes = [
   {
-    path: '/',
-    name: 'index',
-    component: index,
-    children: [
-      {
-        path: '/',
-        name: 'Home',
-        component: () => import(/* webpackChunkName: "Home" */ '@/views/Home.vue')
-      },
-      {
-        path: '/about',
-        name: 'About',
-        component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
-      },
-      // {
-      //   path: '/subapp-logistics',
-      //   name: 'subappLogistics',
-      //   meta: {
-      //     title: '物流'
-      //   },
-      // },
-      // {
-      //   path: '/subapp-marketing',
-      //   name: 'subappMarketing',
-      //   meta: {
-      //     title: '营销'
-      //   },
-      // }
-    ]
+    path: '/home',
+    name: 'Home',
+    component: () => import(/* webpackChunkName: "Home" */ '@/views/Home.vue')
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+  },
+  {
+    path: '/common-finance',
+    name: 'subappCommon',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/common.vue'),
+    meta: {
+      isCommon: true
+    }
   }
 ];
 

@@ -2,28 +2,24 @@
   <div>
     <el-button>2</el-button>
     <el-select v-model="value">
-      <el-option value="1">
-        3333
-      </el-option>
+      <el-option value="1">3333</el-option>
     </el-select>
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
-import { Button, Select, Option } from 'element-ui';
-Vue.use(Button);
-Vue.use(Select);
-Vue.use(Option);
+import Vue from "vue";
+import ElButton from "element-ui/packages/button";
+import ElSelect from "element-ui/packages/select";
+import ElOption from "element-ui/packages/option";
 export default {
-  name: 'HelloWorld',
-  data () {
+  name: "HelloWorld",
+  data() {
     return {
-      value: '1'
+      value: "1"
     };
   }
 };
 </script>
 <style scoped lang="less">
-
 </style>
