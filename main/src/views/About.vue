@@ -1,15 +1,8 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-    <com></com>
+    <h1>主应用This is an about page</h1>
   </div>
 </template>
 <script>
-const com = () => import("@/library/ui/wl-container");
-console.log(com);
-export default {
-  components: {
-    com
-  }
-};
+export default {};
 </script>

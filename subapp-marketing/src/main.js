@@ -1,10 +1,14 @@
 import Vue from 'vue';
 import App from './App.vue';
 import './public-path';
-import router from './router';
+import routes from './router';
 import store from './store';
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
 Vue.config.productionTip = false;
 let instance = null;
+let router = null;
 const __qiankun__ = window.__POWERED_BY_QIANKUN__;
 export async function bootstrap({ components, utils, pager, appBus }) {
   // 注册主应用下发的组件
@@ -19,6 +23,11 @@ export async function bootstrap({ components, utils, pager, appBus }) {
   Vue.prototype.$appBus = appBus;
 }
 export async function mount({ data = {} } = {}) {
+  router = new VueRouter({
+    base: window.__POWERED_BY_QIANKUN__ ? '/subapp-marketing' : '/',
+    mode: 'history',
+    routes
+  });
   instance = new Vue({
     router,
     store,

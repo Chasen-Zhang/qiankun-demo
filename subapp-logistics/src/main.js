@@ -1,11 +1,15 @@
 import Vue from 'vue';
 import './public-path';
 import App from './App.vue';
-import router from './router';
+import routes from './router';
 import store from './store';
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
 // import routeMatch from "@/auth/route-match"; // 导入路由匹配文件路径函数
 Vue.config.productionTip = false;
 let instance = null;
+let router = null;
 window.getDynamicComponet = null;
 const __qiankun__ = window.__POWERED_BY_QIANKUN__;
 export async function bootstrap({ components, utils, pager, appBus }) {
@@ -22,6 +26,11 @@ export async function bootstrap({ components, utils, pager, appBus }) {
   Vue.prototype.$appBus = appBus;
 }
 export async function mount({ data = {} } = {}) {
+  router = new VueRouter({
+    base: window.__POWERED_BY_QIANKUN__ ? '/subapp-logistics' : '/',
+    mode: 'history',
+    routes
+  });
   instance = new Vue({
     router,
     store,

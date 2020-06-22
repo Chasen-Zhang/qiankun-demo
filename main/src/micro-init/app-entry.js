@@ -5,7 +5,7 @@ export default [
     module: 'subapp-logistics',
     defaultRegister: true,
     devEntry: '//localhost:8081',
-    depEntry: '//localhost:8084/',
+    depEntry: 'http://localhost:8086',
     routerBase: '/subapp-logistics'
   },
   {
@@ -14,7 +14,7 @@ export default [
     module: 'subapp-marketing',
     defaultRegister: false,
     devEntry: '//localhost:8082',
-    depEntry: '//localhost:8085/',
+    depEntry: 'http://localhost:8087',
     routerBase: '/subapp-marketing'
   }
 ];

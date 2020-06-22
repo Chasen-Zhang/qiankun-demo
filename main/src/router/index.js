@@ -21,14 +21,27 @@ const routes = [
         path: '/about',
         name: 'About',
         component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
-      }
+      },
+      // {
+      //   path: '/subapp-logistics',
+      //   name: 'subappLogistics',
+      //   meta: {
+      //     title: '物流'
+      //   },
+      // },
+      // {
+      //   path: '/subapp-marketing',
+      //   name: 'subappMarketing',
+      //   meta: {
+      //     title: '营销'
+      //   },
+      // }
     ]
   }
 ];
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
   routes
 });
 

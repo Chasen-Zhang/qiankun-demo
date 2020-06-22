@@ -2,7 +2,9 @@
 const port = 8080; // dev port
 
 module.exports = {
-  publicPath: './',
+  publicPath: '/',
+  outputDir: 'dist',
+  assetsDir: 'static',
   lintOnSave: false,
   devServer: {
     // host: '0.0.0.0',
