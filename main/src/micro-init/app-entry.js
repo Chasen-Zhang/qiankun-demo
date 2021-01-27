@@ -4,7 +4,7 @@ export default [
     title: '物流',
     module: 'subapp-logistics',
     defaultRegister: true,
-    devEntry: '//localhost:8081',
+    devEntry: '//localhost:8082',
     depEntry: 'http://localhost:8086',
     routerBase: '/subapp-logistics'
   },
@@ -13,7 +13,7 @@ export default [
     title: '营销',
     module: 'subapp-marketing',
     defaultRegister: false,
-    devEntry: '//localhost:8082',
+    devEntry: '//localhost:8083',
     depEntry: 'http://localhost:8087',
     routerBase: '/subapp-marketing'
   }

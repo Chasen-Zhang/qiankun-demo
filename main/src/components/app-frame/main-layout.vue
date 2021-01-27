@@ -1,8 +1,7 @@
 <template>
   <div class="sub-container">
-    <div class="header">
-      <s2b-header></s2b-header>
-    </div>
+    <s2b-header></s2b-header>
+
     <el-row class="content">
       <el-col class="nav" :span="4">
         <s2b-nav></s2b-nav>
@@ -24,8 +23,8 @@
 
 <script>
 import Vue from "vue";
-import nav from "./nav";
-import navHeader from "./header";
+import nav from "../nav";
+import navHeader from "../header/index";
 import { Col, Row } from "element-ui";
 
 Vue.use(Col);
@@ -68,14 +67,6 @@ export default {
 }
 .content {
   height: 100%;
-}
-.header {
-  height: 60px;
-  line-height: 60px;
-  background: #434849;
-  padding-left: 20px;
-  font-size: 12px;
-  color: #fff;
 }
 .subapp-loading {
   background: url("~@/assets/images/loading.gif");

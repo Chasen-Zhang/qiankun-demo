@@ -1,5 +1,6 @@
+import testContainer from '../ui/test-container'
 const componentsMap = {
-  'test-container': () => import(`../ui/test-container`)
+  'test-container': testContainer
 }
 
 export {

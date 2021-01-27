@@ -5,7 +5,7 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 
-const port = 8082; // dev port
+const port = 8083; // dev port
 const dev = process.env.NODE_ENV === 'development'
 module.exports = {
   /**
